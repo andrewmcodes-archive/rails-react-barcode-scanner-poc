@@ -8,13 +8,12 @@ import PropTypes from 'prop-types';
 
 const Hello = props => (
   <div>
-    Hello
-    {props.name}
+    <p>Hello {props.name}!</p>
   </div>
 );
 
 Hello.defaultProps = {
-  name: 'David',
+  name: 'React',
 };
 
 Hello.propTypes = {
@@ -22,5 +21,8 @@ Hello.propTypes = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<Hello name="React" />, document.body.appendChild(document.createElement('div')));
+  ReactDOM.render(
+    <Hello name="Andrew" />,
+    document.body.appendChild(document.createElement('div')),
+  );
 });

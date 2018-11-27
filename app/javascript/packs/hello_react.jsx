@@ -5,10 +5,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import AllProducts from '../components/all_products';
+import NewProducts from '../components/new_product';
 
 const Hello = props => (
   <div>
     <p>Hello {props.name}!</p>
+    <AllProducts />
+    <NewProducts />
   </div>
 );
 

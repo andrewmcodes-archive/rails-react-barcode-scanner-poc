@@ -3,6 +3,10 @@ class Api::V1::ProductsController < ApplicationController
     render json: Product.all
   end
 
+  def show
+    render json: Product.find(params[:barcode])
+  end
+
   def create
     product = Product.create(product_params)
     render json: product

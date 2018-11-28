@@ -7,5 +7,6 @@ module.exports = {
   "rules": {
     "react/jsx-one-expression-per-line": 0,
     "react/destructuring-assignment": 0,
+    "class-methods-use-this": 0,
   }
 };

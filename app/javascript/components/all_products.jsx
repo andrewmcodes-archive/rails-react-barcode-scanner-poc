@@ -2,9 +2,12 @@ import React from 'react';
 
 const AllProducts = (props) => {
   const products = props.products.map(product => (
-    <div key={product.id}>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
+    <div key={product.id} className="card mt-4">
+      <div className="card-body">
+        <h2 className="card-title">{product.name}</h2>
+        <p className="card-text">Description: {product.description}</p>
+        <p className="card-text">Barcode: {product.barcode}</p>
+      </div>
     </div>
   ));
   return <div>{products}</div>;

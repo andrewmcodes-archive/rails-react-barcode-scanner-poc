@@ -53,7 +53,7 @@ class Body extends React.Component {
     return (
       <div>
         <FindProduct handleFormSubmit={this.handleFormSubmit} />
-        <AllProducts className="flex" products={this.state.products} />
+        <AllProducts products={this.state.products} />
       </div>
     );
   }

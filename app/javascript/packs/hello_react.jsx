@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import Body from '../components/body';
 
 const Hello = props => (
-  <div className="container py-4">
+  <div className="container py-4 bg-white">
     <h1 className="mb-4">Hello {props.name}!</h1>
     <Body />
   </div>

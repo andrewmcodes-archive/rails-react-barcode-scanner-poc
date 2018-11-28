@@ -22,16 +22,18 @@ class Body extends React.Component {
   }
 
   getFindProduct(product) {
-    console.log(product);
+    if (product === undefined) {
+      alert("Product doesn't exist");
+    } else {
+      alert(product.name);
+    }
   }
 
   // 070989105591
   handleFormSubmit(barcode) {
     this.state.products.forEach((key) => {
-      if (key.barcode == barcode) {
+      if (key.barcode === barcode) {
         this.state.barcode = key.id;
-      } else {
-        console.log('NOT FOUND');
       }
     });
     fetch(`http://localhost:3000/api/v1/products/${this.state.barcode}`, {
@@ -42,8 +44,8 @@ class Body extends React.Component {
       body: undefined,
     })
       .then(response => response.json())
-      .then((product) => {
-        this.getFindProduct(product);
+      .then((barcode) => {
+        this.getFindProduct(barcode);
       });
   }
 

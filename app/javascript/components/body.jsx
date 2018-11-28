@@ -7,6 +7,7 @@ class Body extends React.Component {
     super(props);
     this.state = {
       products: [],
+      barcode: '',
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.getFindProduct = this.getFindProduct.bind(this);
@@ -21,22 +22,20 @@ class Body extends React.Component {
   }
 
   getFindProduct(product) {
-    console.log('===================');
     console.log(product);
-    console.log('===================');
-    console.log(this.state.products);
   }
 
+  // 070989105591
   handleFormSubmit(barcode) {
     this.state.products.forEach((key) => {
       if (key.barcode == barcode) {
-        const id = key.id;
+        this.state.barcode = key.id;
       } else {
         console.log('NOT FOUND');
       }
     });
-    const body = JSON.stringify({ product: { id } });
-    fetch(`http://localhost:3000/api/v1/products/${id}`, {
+    // const body = JSON.stringify({ product: { barcode } });
+    fetch(`http://localhost:3000/api/v1/products/${this.state.barcode}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

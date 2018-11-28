@@ -34,7 +34,6 @@ class Body extends React.Component {
         console.log('NOT FOUND');
       }
     });
-    // const body = JSON.stringify({ product: { barcode } });
     fetch(`http://localhost:3000/api/v1/products/${this.state.barcode}`, {
       method: 'GET',
       headers: {

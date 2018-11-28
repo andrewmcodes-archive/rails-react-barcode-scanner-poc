@@ -36,7 +36,7 @@ class Body extends React.Component {
         this.state.barcode = key.id;
       }
     });
-    fetch(`http://localhost:3000/api/v1/products/${this.state.barcode}`, {
+    fetch(`https://stormy-garden-24685.herokuapp.com//api/v1/products/${this.state.barcode}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

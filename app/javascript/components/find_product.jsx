@@ -8,10 +8,10 @@ const FindProduct = (props) => {
       onSubmit={(e) => {
         props.handleFormSubmit(formFields.barcode.value);
         e.preventDefault();
-        e.reset();
+        e.target.reset();
       }}
     >
-      <input ref={input => (formFields.barcode = input)} placeholder="Find a barcode" />
+      <input ref={input => (formFields.barcode = input)} placeholder="Enter a barcode" />
       <button>Submit</button>
     </form>
   );
